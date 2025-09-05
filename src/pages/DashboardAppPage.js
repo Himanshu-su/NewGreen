@@ -7,20 +7,23 @@ import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography, Card, Tabs, Tab } from '@mui/material';
 import {GrLocation} from 'react-icons/gr'
 import React, { useRef} from 'react';
+import ReactPlayer from "react-player";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import './style.css'
+
+import './dashboard/style.css';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import '..'
+
 
 // import required modules
 import { Navigation } from 'swiper/modules';
 // components
-import Iconify from '../../components/iconify';
+import Iconify from '../components/iconify';
 
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -39,12 +42,12 @@ import {
   AppWidgetSummary,
   AppCurrentSubject,
   AppConversionRates,
-} from '../../sections/@dashboard/app';
+} from '../sections/@dashboard/app';
 
-import Navitem from './Navitem';
-import { Whislist } from './Whislist';
-import { Allfooter } from './allfooter';
-import { Gridcard } from './Grid';
+import Navitem from './dashboard/Navitem';
+import { Whislist } from './dashboard/Whislist';
+import { Allfooter } from './dashboard/allfooter';
+import { Gridcard } from './dashboard/Grid';
 
 
 
@@ -107,6 +110,24 @@ const addToWishlist = (item) => {
   setWishlist([...wishlist, item]);
 };
 
+// video link
+   const videoLinks = [
+    "https://www.youtube.com/watch?v=AF6UONfp1Kw",
+    "https://www.youtube.com/watch?v=BG03OgJoSEY",
+    "https://www.youtube.com/watch?v=sHZohLm-wy4",
+    "https://www.youtube.com/watch?v=DYtmc2JPIfM",
+    "https://www.youtube.com/watch?v=pN0Pr8o5T6c",
+    "https://www.youtube.com/watch?v=WvKSP1lxEgc",
+    "https://www.youtube.com/watch?v=Cg9xauycKuE",
+    "https://www.youtube.com/watch?v=_Fy9__IcAqk",
+  ];
+
+  // Convert watch links to embed links
+  const getEmbedUrl = (url) => {
+    const videoId = url.split("v=")[1]?.split("&")[0];
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
 
   return (
     <>
@@ -133,14 +154,14 @@ const addToWishlist = (item) => {
       <div className="col-12 col-md-6"></div>
     </div>
   </div>
-  <img id='carouselimg' src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/e6cc1a30-2dec-4dc5-b0f2-c5b656909d5b.jpg" className="card-img-top" alt="" />
-  <Card className="card-text position-absolute"
+  <img id='carouselimg' src="/assets/event_img/img3.jpeg" className="card-img-top" alt="" />
+  {/* <Card className="card-text position-absolute"
   id='carouselcard'
   style={{ 
     width:'400px',height:'150px',marginRight:'50%',
     zIndex: 1 }}>
       <div className='p-5'>
-      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card>
+      <h3 id='dummytextheading'>Sanatan Dharma Inter College Kanpur Event</h3></div></Card> */}
   
 
     </SwiperSlide></div>
@@ -152,14 +173,15 @@ const addToWishlist = (item) => {
       <div className="col-12 col-md-6"></div>
     </div>
   </div>
-  <img id='carouselimg' src="https://img-c.udemycdn.com/notices/web_carousel_slide/image/10ca89f6-811b-400e-983b-32c5cd76725a.jpg" className="card-img-top" alt="" />
-  <Card className="card-text position-absolute"
+  <img id='carouselimg' src="/assets/event_img/img2.jpeg" className="card-img-top" alt="" />
+  {/* <Card className="card-text position-absolute"
   id='carouselcard'
   style={{ 
     width:'400px',height:'150px',marginRight:'50%',
     zIndex: 1 }}>
       <div className='p-5'>
-      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card>
+      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div>
+      </Card> */}
     </SwiperSlide></div>
 
 {/* 3 */}
@@ -170,14 +192,14 @@ const addToWishlist = (item) => {
       <div className="col-12 col-md-6"></div>
     </div>
   </div>
-  <img id='carouselimg' src="https://plus.unsplash.com/premium_photo-1661771564227-1d8484e32c8f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c3R1ZHklMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D" className="card-img-top" alt="" />
-  <Card className="card-text position-absolute"
+  <img id='carouselimg' src="/assets/event_img/img1.jpeg" className="card-img-top" alt="" />
+  {/* <Card className="card-text position-absolute"
   id='carouselcard'
   style={{ 
     width:'400px',height:'150px',marginRight:'50%',
     zIndex: 1 }}>
       <div className='p-5'>
-      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card>
+      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card> */}
     </SwiperSlide></div>
 {/* 4 */}
 <div className="position-relative">
@@ -187,14 +209,14 @@ const addToWishlist = (item) => {
       <div className="col-12 col-md-6"></div>
     </div>
   </div>
-  <img id='carouselimg' src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3R1ZHklMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D" className="card-img-top" alt="" />
-  <Card className="card-text position-absolute"
+  <img id='carouselimg' src="/assets/event_img/img4.jpeg" className="card-img-top" alt="" />
+  {/* <Card className="card-text position-absolute"
   id='carouselcard'
   style={{ 
     width:'400px',height:'150px',marginRight:'50%',
     zIndex: 1 }}>
       <div className='p-5'>
-      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card>
+      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card> */}
     </SwiperSlide></div>
     {/* 5 */}
     
@@ -205,14 +227,14 @@ const addToWishlist = (item) => {
       <div className="col-12 col-md-6"></div>
     </div>
   </div>
-  <img id='carouselimg' src="https://plus.unsplash.com/premium_photo-1682123895574-912250267375?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHN0dWR5JTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D" className="card-img-top" alt="" />
-  <Card className="card-text position-absolute"
+  <img id='carouselimg' src="/assets/event_img/img5.jpeg" className="card-img-top" alt="" />
+  {/* <Card className="card-text position-absolute"
   id='carouselcard'
   style={{ 
     width:'400px',height:'150px',marginRight:'50%',
     zIndex: 1 }}>
       <div className='p-5'>
-      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card>
+      <h3 id='dummytextheading'>Dummy text for Slide 1.</h3></div></Card> */}
     </SwiperSlide></div>
     </Swiper>
     </div>
@@ -247,6 +269,45 @@ const addToWishlist = (item) => {
 
  
     <Gridcard/>
+
+{/* video link */}
+ <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)", // 4 videos per row
+        gap: "20px",
+        padding: "20px",
+      }}
+    >
+      {videoLinks.map((link, index) => (
+        <div
+          key={index}
+          style={{
+            position: "relative",
+            paddingBottom: "56.25%", // 16:9
+            height: 0,
+            overflow: "hidden",
+            borderRadius: "10px",
+            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+          }}
+        >
+          <iframe
+            src={getEmbedUrl(link)}
+            title={`YouTube video ${index}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </div>
+      ))}
+    </div>
 
 
         <Grid container spacing={3}>

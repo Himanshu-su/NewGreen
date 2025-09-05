@@ -102,13 +102,43 @@ const navConfig =
     path: '/dashboard/app',
 icon:<DashboardIcon />
   },
+    {
+    title: 'Air',
+    path: '/dashboard/app',
+icon:<KeyboardDoubleArrowDownIcon />
+  },
+    {
+    title: 'Water',
+    path: '/dashboard/app',
+icon:<AdminPanelSettingsIcon/>
+  },
+    {
+    title: 'Soil',
+    path: '/dashboard/app',
+icon:<FileCopyIcon/>
+  },
+  {
+    title: 'Noise Pollution',
+    path: '/dashboard/app',
+icon:<NotificationsActiveIcon />
+  },
+    {
+    title: 'Plastic Waste',
+    path: '/dashboard/app',
+icon:<ShoppingBasketIcon/>
+  },
+    {
+    title: 'E-Waste',
+    path: '/dashboard/app',
+icon:<ShoppingCartCheckoutIcon  />
+  },
   {
     title: 'Wishlist',
     path: '/dashboard/wishlist',
 icon:<FavoriteBorderIcon  />
   },
   {
-    title: 'Cart Items',
+    title: 'Blogs',
     path: '/dashboard/addtocart',
     icon:        <ShoppingCartIcon />
   },

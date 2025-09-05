@@ -127,11 +127,11 @@ const Navitem = ({addToWhishlist}) => {
         {/* <h6 className="card-text">{item.heading}</h6> */}
         <div className=''>
         <div className="row">
-          <div className="col-md-5">  <h5>{item.name}</h5>
+          <div className="col-md-12">  <h5>{item.name}</h5>
         </div>
-          <div className="col-md-7 ">
+          {/* <div className="col-md-7 ">
           <h6>Price: Rs.{item.price}</h6>
-          </div>
+          </div> */}
         </div>
         </div>
         <hr className="dropdown-divider"/>
@@ -141,7 +141,7 @@ const Navitem = ({addToWhishlist}) => {
       
             <button type="button" className="btn ms-1" id='navcardbtn' 
              onClick={() => addToCart(item)}
-            >Add to Cart</button>
+            >Blog</button>
      
             </div>
             <div className="col-md-4 mt-3 ms-1  hoverblue ">

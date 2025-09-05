@@ -40,7 +40,7 @@ import RegistrationPage from './sections/auth/login/PageRegistration';
 import StudentList from './sections/auth/login/Listfolder/studentlist';
 // import { Imgaauto } from './sections/auth/login/openai/imgaito';
 
-import DashboardAppPage from './pages/dashboard/DashboardAppPage';
+import DashboardAppPage from './pages/DashboardAppPage';
 import { Checkout } from './pages/dashboard/Checkout';
 import { Maincheckout } from './pages/checkout/maincheckout.js/maincheckout';
 
@@ -74,7 +74,7 @@ export default function Router() {
         { path: 'blog', element: <BlogPage /> },
         { path: 'profile', element: <ProfilePage /> },
         { path: 'wishlist', element: <Wislist /> },   
-        // { path: 'addtocart', element: <Addtocart /> },
+        { path: 'addtocart', element: <Addtocart /> },
         { path: 'popupadmin', element: <AdminNavItem /> },
         { path: 'admin', element: <Admin /> },
         {
