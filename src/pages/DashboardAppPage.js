@@ -271,43 +271,44 @@ const addToWishlist = (item) => {
     <Gridcard/>
 
 {/* video link */}
- <div
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", // responsive
+    gap: "20px",
+    padding: "20px",
+  }}
+>
+  {videoLinks.map((link, index) => (
+    <div
+      key={index}
       style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)", // 4 videos per row
-        gap: "20px",
-        padding: "20px",
+        position: "relative",
+        paddingBottom: "56.25%", // 16:9 aspect ratio
+        height: 0,
+        overflow: "hidden",
+        borderRadius: "10px",
+        boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
       }}
     >
-      {videoLinks.map((link, index) => (
-        <div
-          key={index}
-          style={{
-            position: "relative",
-            paddingBottom: "56.25%", // 16:9
-            height: 0,
-            overflow: "hidden",
-            borderRadius: "10px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-          }}
-        >
-          <iframe
-            src={getEmbedUrl(link)}
-            title={`YouTube video ${index}`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-          />
-        </div>
-      ))}
+      <iframe
+        src={getEmbedUrl(link)}
+        title={`YouTube video ${index}`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      />
     </div>
+  ))}
+</div>
+
 
 
         <Grid container spacing={3}>

@@ -102,7 +102,7 @@ const Navitem = ({addToWhishlist}) => {
     <div>
         <div className="container">
        <div className="row p-5"  >
-          <Swiper
+          {/* <Swiper
         onSwiper={setSwiperRef}
         slidesPerView={4}
         centeredSlides={false}
@@ -116,7 +116,7 @@ const Navitem = ({addToWhishlist}) => {
       >
 
     
-              {/* 1st swiper */}
+           
 
 {formcardarray.map((item)=>{
     return(
@@ -124,14 +124,12 @@ const Navitem = ({addToWhishlist}) => {
           <SwiperSlide id='navswiperslide' className="swiper-slide">
       <img id='navitemimg' src={item.img} alt="img" />
       <div className="card-body mt-3 mb-3 text-center">
-        {/* <h6 className="card-text">{item.heading}</h6> */}
+     
         <div className=''>
         <div className="row">
           <div className="col-md-12">  <h5>{item.name}</h5>
         </div>
-          {/* <div className="col-md-7 ">
-          <h6>Price: Rs.{item.price}</h6>
-          </div> */}
+       
         </div>
         </div>
         <hr className="dropdown-divider"/>
@@ -147,7 +145,7 @@ const Navitem = ({addToWhishlist}) => {
             <div className="col-md-4 mt-3 ms-1  hoverblue ">
     <FavoriteBorderIcon 
         id="FavoriteBorderIcon"
-        // onClick={() => addToWishlist(item._id)}
+   
         style={{ backgroundColor: 'transparent' }} 
         className='hoverblue'
     />
@@ -160,7 +158,68 @@ const Navitem = ({addToWhishlist}) => {
         </>
     )
 })}
-  </Swiper></div>
+  </Swiper> */}
+  <Swiper
+  onSwiper={setSwiperRef}
+  slidesPerView={1} // default for very small screens
+  spaceBetween={20}
+  navigation={true}
+  modules={[Navigation]}
+  className="mySwiper"
+  breakpoints={{
+    320: {   // mobile portrait
+      slidesPerView: 1,
+      spaceBetween: 10,
+    },
+    480: {   // mobile landscape
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    768: {   // tablets
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1024: {  // small laptops / desktops
+      slidesPerView: 4,
+      spaceBetween: 25,
+    },
+    1440: {  // large screens
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+  }}
+>
+  {formcardarray.map((item) => (
+    <SwiperSlide key={item._id} id="navswiperslide" className="swiper-slide">
+      <img id="navitemimg" src={item.img} alt="img" />
+      <div className="card-body mt-3 mb-3 text-center">
+        <h5>{item.name}</h5>
+        <hr className="dropdown-divider" />
+        <div className="row">
+          <div className="col-md-7 mt-3">
+            <button
+              type="button"
+              className="btn ms-1"
+              id="navcardbtn"
+              onClick={() => addToCart(item)}
+            >
+              Blog
+            </button>
+          </div>
+          <div className="col-md-4 mt-3 ms-1 hoverblue">
+            <FavoriteBorderIcon
+              id="FavoriteBorderIcon"
+              style={{ backgroundColor: 'transparent' }}
+              className="hoverblue"
+            />
+          </div>
+        </div>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+  </div>
     </div>
    
             <ToastContainer /> 

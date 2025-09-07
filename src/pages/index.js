@@ -232,8 +232,12 @@ icon:<FavoriteBorderIcon  />
         '& .simplebar-content': { height: 1, display: 'flex', flexDirection: 'column' },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: 'inline-flex' }}>
-        <Logo />
+      <Box sx={{ px: 1.5, py: 3, display: 'inline-flex' }}>
+        {/* <Logo /> */}
+        <img src="/assets/event_img/logo.jpeg" alt="logo" 
+           style={{ width: "100px", height: "100px", objectFit: "contain",
+           cursor:"pointer" }}
+        />
       </Box>
 
       <Box sx={{ mb: 5, mx: 2.5 }}>
